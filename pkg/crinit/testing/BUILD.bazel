@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["testing.go"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@io_k8s_apimachinery//pkg/runtime:go_default_library",
+        "@io_k8s_client_go//rest:go_default_library",
+        "@io_k8s_client_go//tools/clientcmd:go_default_library",
+        "@io_k8s_client_go//tools/clientcmd/api:go_default_library",
+        "@io_k8s_kubernetes//federation/client/clientset_generated/federation_clientset:go_default_library",
+        "@io_k8s_kubernetes//federation/pkg/crinit/util:go_default_library",
+        "@io_k8s_kubernetes//pkg/api:go_default_library",
+        "@io_k8s_kubernetes//pkg/kubectl/cmd/util:go_default_library",
+    ],
+)

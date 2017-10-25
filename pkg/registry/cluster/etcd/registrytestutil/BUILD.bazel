@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["registrytestutil.go"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/clusterregistry:go_default_library",
+        "//pkg/apis/clusterregistry/install:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/errors:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1:go_default_library",
+        "@io_k8s_apimachinery//pkg/fields:go_default_library",
+        "@io_k8s_apimachinery//pkg/labels:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime:go_default_library",
+        "@io_k8s_apiserver//pkg/endpoints/request:go_default_library",
+        "@io_k8s_apiserver//pkg/registry/generic/registry:go_default_library",
+        "@io_k8s_apiserver//pkg/registry/rest/resttest:go_default_library",
+        "@io_k8s_apiserver//pkg/storage/etcd:go_default_library",
+        "@io_k8s_apiserver//pkg/storage/etcd/testing:go_default_library",
+        "@io_k8s_apiserver//pkg/storage/storagebackend:go_default_library",
+        "@io_k8s_apiserver//pkg/storage/testing:go_default_library",
+    ],
+)
